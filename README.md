@@ -1,24 +1,26 @@
-# client
+# upload
 
-## Project setup
-```
-pnpm install
-```
+上传服务全内容
 
-### Compiles and hot-reloads for development
-```
-pnpm run serve
-```
 
-### Compiles and minifies for production
-```
-pnpm run build
-```
 
-### Lints and fixes files
-```
-pnpm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## 单文件上传
+
+
+
+
+
+
+
+
+
+## 参考
+
+https://juejin.cn/post/6980142557066067982
+
+
+
+
+
