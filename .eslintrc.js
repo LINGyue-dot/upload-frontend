@@ -13,6 +13,9 @@ module.exports = {
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    "@typescript-eslint/ban-ts-ignore": "off",
+    // allow @ts-ignore to ignore ts err
+    "@typescript-eslint/ban-ts-comment": "off"
   }
 }

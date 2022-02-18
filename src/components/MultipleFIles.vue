@@ -13,8 +13,6 @@ import {uploadMultiple} from "@/utils/request";
 
 const file = ref<File | null>(null)
 
-// 1.通过 ref 直接获取 dom 再获取 file
-// 2.通过事件来进行获取
 const onChange = ($event: Event) => {
   const target = $event.target as HTMLInputElement
   if (target && target.files) {
@@ -23,11 +21,11 @@ const onChange = ($event: Event) => {
 }
 
 const onClick = () => {
-  uploadSingleFile()
+  upload()
 }
 
 // upload function
-const uploadSingleFile = async () => {
+const upload = async () => {
   uploadMultiple({
     url: '/upload/multiple',
     files: file.value, // 需要使用 value

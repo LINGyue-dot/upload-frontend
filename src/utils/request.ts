@@ -27,6 +27,7 @@ export function uploadMultiple({url, files, fieldName = 'file'}) {
   // console.log(TypeOf(files)) FileList
   // 将类数组对象或者可遍历对象转换为数组
   Array.from(files).forEach(file => {
+    // @ts-ignore
     formData.append(fieldName, file)
   })
   return request.post(url, formData, {
@@ -38,6 +39,19 @@ export function uploadMultiple({url, files, fieldName = 'file'}) {
       console.log(percentCompleted);
     }
   })
+}
+
+// 文件夹上传
+export function uploadDirectory({url, files, fieldName = 'file'}) {
+  const formData = new FormData()
+  // console.log(TypeOf(files)) FileList
+  // 将类数组对象或者可遍历对象转换为数组
+  Array.from(files).forEach((file, i) => {
+    // @ts-ignore
+    formData.append(fieldName, file, file.webkitRelativePath.replace(/\//g, '@'))
+  })
+  return request.post(url, formData)
+  
 }
 
 
